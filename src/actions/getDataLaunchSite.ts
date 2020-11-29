@@ -1,6 +1,6 @@
 export const launchpadsFetchData = (launchpads: any) => {
   return {
-    type: "CARDS_FETCH",
+    type: "GET_LAUNCHPADS_FETCH",
     launchpads
   }
 };

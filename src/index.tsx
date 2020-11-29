@@ -1,5 +1,6 @@
 import {applyMiddleware, createStore} from "redux";
 import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.min.js';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import ReactDOM from 'react-dom';
 

@@ -8,21 +8,23 @@ class App extends React.Component {
     render() {
         return (
             <div className="wrap-body">
-                <div className="btn-group" role="group">
-                    <section>
-                        <select className="">
-                          <option value="hide">Rocket</option>
-                          <DropdownRocket/>
-                        </select>
-                    </section>
+              <div className="dropdown">
+                <button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Rocket
+                </button>
+                <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                  <DropdownRocket/>
                 </div>
-              <div className="btn-group" role="group">
-                <section>
-                  <select className="">
-                    <option value="hide">Launch Site</option>
-                    <DropdownLaunchSite/>
-                  </select>
-                </section>
+              </div>
+              <div className="dropdown">
+                <button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  LaunchSite
+                </button>
+                <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                  <DropdownLaunchSite/>
+                </div>
               </div>
                 <GetData/>
             </div>

@@ -3,11 +3,13 @@ import {connect} from "react-redux";
 import {getDataMissions} from "../actions/getDataMissions";
 import '../App.css'
 import {getDataRocket} from "../actions/getDataRocket";
+import {getDataLaunchSite} from "../actions/getDataLaunchSite";
 
 export class GetData extends React.Component<any> {
     componentDidMount() {
         this.props.onGetData();
-        this.props.getDataRocket();
+        this.props.getGetRocket();
+        this.props.getGetLaunchSite()
     }
 
     render() {
@@ -40,6 +42,7 @@ export const mapStateToProps = (state: any) => ({
 
 export const mapDispatchToProps = (dispatch: any) => ({
   onGetData: (): any => dispatch(getDataMissions()),
-  getDataRocket: (): any => dispatch(getDataRocket())
+  getGetRocket: (): any => dispatch(getDataRocket()),
+  getGetLaunchSite:(): any => dispatch(getDataLaunchSite())
 });
 export default connect(mapStateToProps, mapDispatchToProps)(GetData);
