@@ -1,4 +1,6 @@
-export const launchpadsFetchData = (launchpads: any) => {
+import {ILaunchpads} from "../interfaces/interfaceLaunchpads";
+
+export const launchpadsFetchData = (launchpads: ILaunchpads) => {
   return {
     type: "GET_LAUNCHPADS_FETCH",
     launchpads

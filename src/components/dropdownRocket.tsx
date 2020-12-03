@@ -9,7 +9,7 @@ export class DropdownRocket extends React.Component<any> {
       <label htmlFor="FormSelect2">Rocket</label>
       <select className="form-control" onChange={(e) => this.props.filter(e.target.value)} id="FormSelect2">
         <option value={''} selected>All</option>
-        {this.props.dataDragons.map((i: any) => {
+        {this.props.rockets.map((i: any) => {
           return (
             <option className="dropdown-item" key={i.id + '12'}
                     value={i.id}
@@ -21,7 +21,7 @@ export class DropdownRocket extends React.Component<any> {
   }
 }
 export const mapStateToProps = (state: any) => ({
-  dataDragons: state.dataDragons
+  rockets: state.rockets
 });
 
 export const mapDispatchToProps = (dispatch: any) => ({

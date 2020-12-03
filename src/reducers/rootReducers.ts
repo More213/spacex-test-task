@@ -1,12 +1,12 @@
 import { combineReducers } from "redux";
-import { dataMissions } from "./missionsReducer";
-import { dataDragons } from "./rocketReducer";
+import { missions } from "./missionsReducer";
+import { rockets } from "./rocketReducer";
 import {launchpads} from "./launchpadReducer";
 import {filterValue} from "./filterValue";
 
 const rootReducer = combineReducers({
-    dataMissions,
-    dataDragons,
+    missions,
+    rockets,
     launchpads,
     filterValue
 });

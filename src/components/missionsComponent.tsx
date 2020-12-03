@@ -15,18 +15,18 @@ export class GetData extends React.Component<any> {
     }
 
     filteringRocketAndLaunchpad():any {
-      const missions = this.props.dataMissions.filter((obj: any) => obj.rocket === this.props.filterValue.dragonId)
+      const missions = this.props.missions.filter((obj: any) => obj.rocket === this.props.filterValue.dragonId)
         .filter((obj: any) => obj.launchpad === this.props.filterValue.launchpadId);
       return this.checkArrayLength(missions);
     }
 
     filteringLaunchpad():any {
-      const missions = this.props.dataMissions.filter((obj: any) => obj.launchpad === this.props.filterValue.launchpadId);
+      const missions = this.props.missions.filter((obj: any) => obj.launchpad === this.props.filterValue.launchpadId);
       return this.checkArrayLength(missions);
     }
 
     filteringRocket():any {
-      const missions = this.props.dataMissions.filter((obj: any) => obj.rocket === this.props.filterValue.dragonId)
+      const missions = this.props.missions.filter((obj: any) => obj.rocket === this.props.filterValue.dragonId)
       return this.checkArrayLength(missions);
     }
 
@@ -48,7 +48,7 @@ export class GetData extends React.Component<any> {
         return this.filteringLaunchpad();
       }
       this.isData = true;
-      return this.props.dataMissions;
+      return this.props.missions;
     }
 
     formatData(fireDate: string): string {
@@ -77,7 +77,7 @@ export class GetData extends React.Component<any> {
                     <h5 className="card-title">{i.name ? i.name : "Mission Name"}</h5>
                     <p className="card-text"><small className="text-muted">{this.formatData(i.static_fire_date_utc)}</small></p>
                   </div>
-                  <p className="card-text">{i.details ? i.details : "Details"}</p>
+                  <p className="card-text">{i.details ? i.details : "No details"}</p>
                 </div>
               </div>
             </div>
@@ -92,7 +92,7 @@ export class GetData extends React.Component<any> {
 }
 
 export const mapStateToProps = (state: any) => ({
-  dataMissions: state.dataMissions,
+  missions: state.missions,
   filterValue: state.filterValue
 });
 

@@ -1,7 +1,9 @@
-export const missionsFetchData = (dataMissions: any) => {
+import {Imission} from "../interfaces/interfaceMissions";
+
+export const missionsFetchData = (missions: Imission[]) => {
     return {
         type: "GET_MISSIONS_FETCH",
-        dataMissions
+        missions
     }
 };
 export const cardsFetchError = () => {

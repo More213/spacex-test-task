@@ -1,7 +1,9 @@
-export const dragonsFetchData = (dataDragons: any) => {
+import {IRocket} from "../interfaces/interfaceRocket";
+
+export const dragonsFetchData = (rockets: IRocket) => {
   return {
     type: "CARDS_FETCH",
-    dataDragons
+    rockets
   }
 };
 export const cardsFetchError = () => {

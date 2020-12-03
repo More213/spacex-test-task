@@ -1,7 +1,7 @@
-export const dataMissions = (state:any = [], action: any) => {
+export const missions = (state:any = [], action: any) => {
     switch (action.type) {
         case "GET_MISSIONS_FETCH":
-            return [...state, ...action.dataMissions];
+            return [...state, ...action.missions];
         default:
             return state;
     }
