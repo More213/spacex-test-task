@@ -1,6 +1,6 @@
 const defaultState: any = {
-  dragonId: '',
-  launchpadId: '',
+  dragonId: 'all',
+  launchpadId: 'all',
 }
 export const filterValue = (state:any = defaultState, action: any) => {
   switch (action.type) {

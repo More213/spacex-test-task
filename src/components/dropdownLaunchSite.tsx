@@ -7,8 +7,8 @@ export class DropdownLaunchSite extends React.Component<any>{
   render() {
     return <div className="form-group col-4">
       <label htmlFor="FormSelect1">Launch Site</label>
-      <select className="form-control" onChange={(e) => this.props.filter(e.target.value)} id="FormSelect1">
-        <option value={''} selected>All</option>
+      <select className="form-control" onChange={(e) => this.props.filter(e.target.value)} id="FormSelect1" defaultValue={'all'}>
+        <option value={'all'}>All</option>
         {this.props.launchpads.map((i: any) => {
           return (
             <option className="dropdown-item" key={i.id + '12'}

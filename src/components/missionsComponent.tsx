@@ -40,11 +40,11 @@ export class GetData extends React.Component<any> {
     }
 
     isSortedArray() {
-      if(this.props.filterValue.dragonId !== '' && this.props.filterValue.launchpadId !== ''){
+      if(this.props.filterValue.dragonId !== 'all' && this.props.filterValue.launchpadId !== 'all'){
         return this.filteringRocketAndLaunchpad();
-      } else if (this.props.filterValue.dragonId !== '') {
+      } else if (this.props.filterValue.dragonId !== 'all') {
         return this.filteringRocket()
-      } else if (this.props.filterValue.launchpadId !== '') {
+      } else if (this.props.filterValue.launchpadId !== 'all') {
         return this.filteringLaunchpad();
       }
       this.isData = true;
@@ -66,7 +66,7 @@ export class GetData extends React.Component<any> {
 
       return card.map((i: any) => {
         return (
-          <div className="card mb-3 card-rocket col-8">
+          <div className="card mb-3 card-rocket col-8" key={i.id+i.name}>
             <div className="row no-gutters">
               <div className="col-md-3 wrap-img">
                 <img src={i.links.patch.small} className='card-img' alt="mission_patch_small"/>
