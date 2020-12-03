@@ -5,13 +5,19 @@ import {dragonsFilterAction} from "../actions/filterForRockets";
 export class DropdownRocket extends React.Component<any> {
 
   render() {
-    return this.props.dataDragons.map((i: any) => {
-      return (
-        <button className="dropdown-item" key={i.id + '12'}
-        onClick={() => this.props.filter(i.id)}
-        >{i.name}</button>
-      )
-    })
+    return <div className="form-group col-4">
+      <label htmlFor="FormSelect2">Rocket</label>
+      <select className="form-control" onChange={(e) => this.props.filter(e.target.value)} id="FormSelect2">
+        <option value={''} selected>All</option>
+        {this.props.dataDragons.map((i: any) => {
+          return (
+            <option className="dropdown-item" key={i.id + '12'}
+                    value={i.id}
+            >{i.name}</option>
+          )
+        })}
+      </select>
+          </div>
   }
 }
 export const mapStateToProps = (state: any) => ({

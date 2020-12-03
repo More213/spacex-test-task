@@ -1,6 +1,6 @@
-export const dragonsFilterAction = (dragonsFilter: string) => {
+export const dragonsFilterAction = (dragonId: string) => {
   return {
     type: "DRAGONS_FILTER",
-    dragonsFilter
+    dragonId
   }
 };
