@@ -5,6 +5,7 @@ import '../App.css'
 import {getDataRocket} from "../actions/getDataRocket";
 import {getDataLaunchSite} from "../actions/getDataLaunchSite";
 import moment from "moment";
+import image from '../img/rH_k3PtQ_400x400.jpg';
 
 export class GetData extends React.Component<any> {
     isData = true;
@@ -69,7 +70,7 @@ export class GetData extends React.Component<any> {
           <div className="card mb-3 card-rocket col-8" key={i.id+i.name}>
             <div className="row no-gutters">
               <div className="col-md-3 wrap-img">
-                <img src={i.links.patch.small} className='card-img' alt="mission_patch_small"/>
+                <img src={i.links.patch.small ? i.links.patch.small : image} className='card-img' alt="mission_patch_small"/>
               </div>
               <div className="col-md-8">
                 <div className="card-body">
@@ -77,7 +78,7 @@ export class GetData extends React.Component<any> {
                     <h5 className="card-title">{i.name ? i.name : "Mission Name"}</h5>
                     <p className="card-text"><small className="text-muted">{this.formatData(i.static_fire_date_utc)}</small></p>
                   </div>
-                  <p className="card-text">{i.details ? i.details : "No details"}</p>
+                  <p className="card-text">{i.details ? i.details : i.upcoming ? 'Upcoming' :  'No details'}</p>
                 </div>
               </div>
             </div>
